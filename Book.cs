@@ -17,4 +17,12 @@ public class Book
         author = aAuthor;
         pages = aPages;
     }
+	public bool Abv500()
+    {
+		if (pages > 500)
+        {
+			return true;
+        }
+		return false;
+    }
 }
