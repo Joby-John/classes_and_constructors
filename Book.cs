@@ -4,7 +4,7 @@ public class Book
 {
 	public string title;
 	public string author;
-	public int pages;
+	private string pages;
 	public Book()
 	{
 		//constructor with no parameter
@@ -15,14 +15,24 @@ public class Book
 		//consturctor with parameters
         title = aTitle;
         author = aAuthor;
-        pages = aPages;
+        Pages = Convert.ToString(aPages);
     }
-	public bool Abv500()
+	public string Pages
     {
-		if (pages > 500)
-        {
-			return true;
-        }
-		return false;
+        get {
+			return  pages;
+		}
+		set //here only more than 500 and less than 500 is the only allowed values for pages 
+		{ 
+		if (Convert.ToInt32(value) > 500)
+            {
+				pages = "More than 500";
+            }
+            else
+            {
+				pages = "Less than 500";
+            }
+		}
     }
+
 }
